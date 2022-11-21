@@ -5,7 +5,8 @@ let env = process.env.NODE_ENV.trim(); // 'dev' or 'prod'
 const dev = {
     api: {
         port: parseInt(process.env.DEV_API_PORT) || 3000,
-        key: parseInt(process.env.DEV_API_KEY) || "azerty"
+        key: parseInt(process.env.DEV_API_KEY) || "azerty",
+        tokenDuration: parseInt(process.env.DEV_API_TOKEN_DURATION) || "24h"
     },
     mongodb: {
         host: process.env.DEV_MONGODB_HOST || 'mongodb://localhost',
@@ -16,7 +17,9 @@ const dev = {
 
 const prod = {
     app: {
-        port: parseInt(process.env.PROD_API_PORT) || 3000
+        port: parseInt(process.env.PROD_API_PORT) || 3000,
+        key: parseInt(process.env.PROD_API_KEY) || "azerty",
+        tokenDuration: parseInt(process.env.PROD_API_TOKEN_DURATION) || "24h"
     },
     mongodb: {
         host: process.env.TEST_DB_HOST || 'localhost',
