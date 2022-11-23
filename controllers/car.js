@@ -5,8 +5,9 @@ exports.createCar = (req, res, next) => {
     const car = new Car({
         mileage: req.body.mileage,
         year: req.body.year,
-        owner: req.auth.userId,
-        guests: [],
+        ownerId: req.auth.userId,
+        guestsId: [],
+        specsId: "aaa" // TODO : link to specs Id
     });
     car.save().then(
         () => {
@@ -31,7 +32,7 @@ exports.deleteCar = (req, res, next) => {
     Car.deleteOne({ _id: req.body.id }).then(
         (result) => {
             res.status(200).json({
-                message: result.deletedCount
+                message: "Car deleted : " + result.deletedCount
             });
         }
     ).catch(
