@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const config = require('../config');
 
 // TODO : mettre plus que 10 ou random ?
+// TODO : generate sharedID
 exports.signup = (req, res, next) => {
     // TODO : check inputs and throw errors
     bcrypt.hash(req.body.password, 10)

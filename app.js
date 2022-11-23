@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const config = require('./config');
 
 const userRoutes = require('./routes/user');
+const carRoutes = require('./routes/car');
 
 const app = express();
 app.use(express.json());
@@ -16,5 +17,7 @@ mongoose.connect(config.mongodb.host + ":" + config.mongodb.port + "/" + config.
     .catch(() => console.log("Connection to MongoDB failed !"));
 
 app.use('/api/user', userRoutes);
+app.use('/api/car', carRoutes);
+
 
 module.exports = app;
