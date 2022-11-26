@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "d83c28ec-36d8-44c6-8ea1-71f860f06182",
+		"name": "SAMM backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24421316"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hugo\",\r\n    \"email\": \"totoa@gmail.com\",\r\n    \"password\": \"aaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/user/signup",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "bob",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "aaa@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "aaa",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"totoa@gmail.com\",\r\n    \"password\": \"aaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/user/login",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mileage\": 1000,\r\n    \"year\": 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/car/create",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"car",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"637e843a7c92417dee752083\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/car/delete",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"car",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Refuel",
+					"item": []
+				},
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIUri}}/event/refuel/test",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"event",
+								"refuel",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzdlNzBkZjhmNzI1NDcyZTVmODAyNjUiLCJpYXQiOjE2NjkyMzA4MjcsImV4cCI6MTY2OTMxNzIyN30.YGNsYp7GUXPzXwG-tP0RWXRBqHZsMKV9toZA7CRLA2A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
