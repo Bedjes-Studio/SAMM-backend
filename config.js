@@ -9,7 +9,7 @@ const dev = {
         tokenDuration: parseInt(process.env.DEV_API_TOKEN_DURATION) || "24h"
     },
     mongodb: {
-        host: process.env.DEV_MONGODB_HOST || 'mongodb://localhost',
+        host: process.env.DEV_MONGODB_HOST || 'mongodb://127.0.0.1',
         port: parseInt(process.env.DEV_MONGODB_PORT) || 27017,
         name: process.env.DEV_MONGODB_NAME || 'nodejs'
     }
@@ -22,7 +22,7 @@ const prod = {
         tokenDuration: parseInt(process.env.PROD_API_TOKEN_DURATION) || "24h"
     },
     mongodb: {
-        host: process.env.TEST_DB_HOST || 'localhost',
+        host: process.env.TEST_DB_HOST || '127.0.0.1',
         port: parseInt(process.env.TEST_DB_PORT) || 27017,
         name: process.env.TEST_DB_NAME || 'test'
     }
