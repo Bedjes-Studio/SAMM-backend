@@ -27,8 +27,8 @@ exports.createCar = (req, res, next) => {
 
 // TODO : check inputs and throw errors for security
 // check de delete juste sa voiture
+// TODO : safe delete
 exports.deleteCar = (req, res, next) => {
-    console.log(req.body.id);
     Car.deleteOne({ _id: req.body.id }).then(
         (result) => {
             res.status(200).json({

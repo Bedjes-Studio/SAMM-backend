@@ -46,3 +46,21 @@ exports.login = (req, res, next) => {
         })
         .catch(error => res.status(500).json({ error }));
 };
+
+// TODO : safe delete
+exports.deleteAccount = (req, res, next) => {
+    console.log(req.auth.userId);
+    User.deleteOne({ _id: req.auth.userId }).then(
+        (result) => {
+            res.status(200).json({
+                message: "User account deleted : " + result.deletedCount
+            });
+        }
+    ).catch(
+        (error) => {
+            res.status(400).json({
+                error: error
+            });
+        }
+    );
+};
