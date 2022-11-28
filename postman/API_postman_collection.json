@@ -132,6 +132,90 @@
 					"response": []
 				},
 				{
+					"name": "Read single",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6384c027385937a92b2d108a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/car/getSingle",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"car",
+								"getSingle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/car/getAll",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"car",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mileage\": 1000000,\r\n    \"year\": 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/car/update",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"car",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete",
 					"request": {
 						"method": "DELETE",
