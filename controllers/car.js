@@ -25,6 +25,59 @@ exports.createCar = (req, res, next) => {
     );
 };
 
+
+exports.getSingle = (req, res, next) => {
+    Car.findOne({
+        _id: req.body.id
+    }).then(
+        (car) => {
+            res.status(200).json(car);
+        }
+    ).catch(
+        (error) => {
+            res.status(404).json({
+                error: error
+            });
+        }
+    );
+}
+
+exports.getAll = (req, res, next) => {
+    Car.find().then(
+        (cars) => {
+            res.status(200).json(cars);
+        }
+    ).catch(
+        (error) => {
+            res.status(400).json({
+                error: error
+            });
+        }
+    );
+}
+
+exports.update = (req, res, next) => {
+    const car = new Car({
+        _id: req.body.id,
+        date: req.body.date,
+        mileage: req.body.mileage,
+        year: req.body.year,
+    });
+    Car.updateOne({ _id: req.body.id }, car).then(
+        () => {
+            res.status(201).json({
+                message: 'Car updated successfully!'
+            });
+        }
+    ).catch(
+        (error) => {
+            res.status(400).json({
+                error: error
+            });
+        }
+    );
+}
+
 // TODO : check inputs and throw errors for security
 // check de delete juste sa voiture
 // TODO : safe delete
