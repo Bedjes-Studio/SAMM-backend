@@ -34,23 +34,6 @@
 							"path": [
 								"user",
 								"signup"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "bob",
-									"disabled": true
-								},
-								{
-									"key": "email",
-									"value": "aaa@gmail.com",
-									"disabled": true
-								},
-								{
-									"key": "password",
-									"value": "aaa",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -81,6 +64,36 @@
 							"path": [
 								"user",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete account",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APIUri}}/user/deleteAccount",
+							"host": [
+								"{{APIUri}}"
+							],
+							"path": [
+								"user",
+								"deleteAccount"
 							]
 						}
 					},
@@ -152,26 +165,63 @@
 			"item": [
 				{
 					"name": "Refuel",
-					"item": []
-				},
-				{
-					"name": "Test",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{APIUri}}/event/refuel/test",
-							"host": [
-								"{{APIUri}}"
-							],
-							"path": [
-								"event",
-								"refuel",
-								"test"
-							]
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"fuelType\": \"sp95\",\r\n        \"litterPrice\": 1.56,\r\n        \"totalCost\":  95.5,\r\n        \"litter\":  50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/refuel/test",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"refuel",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"637e843a7c92417dee752083\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/car/delete",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"car",
+										"delete"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
@@ -181,7 +231,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzdlNzBkZjhmNzI1NDcyZTVmODAyNjUiLCJpYXQiOjE2NjkyMzA4MjcsImV4cCI6MTY2OTMxNzIyN30.YGNsYp7GUXPzXwG-tP0RWXRBqHZsMKV9toZA7CRLA2A",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzdlNzBkZjhmNzI1NDcyZTVmODAyNjUiLCJpYXQiOjE2Njk1NjQ5NzUsImV4cCI6MTY2OTY1MTM3NX0._QNetijIGvC9uj4NKZzQQ1ga4s9e_sJqRSpMsCd96KI",
 				"type": "string"
 			}
 		]
