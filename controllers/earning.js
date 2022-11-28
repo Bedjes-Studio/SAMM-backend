@@ -1,25 +1,19 @@
-const Refuel = require('../models/refuel');
-
-exports.test = (req, res, next) => {
-    res.status(200).json({ "Test": "Ok" });
-};
+const Earning = require('../models/earning');
 
 exports.create = (req, res, next) => {
-    const refuel = new Refuel({
+    const earning = new Earning({
         date: Date.now(),
         mileage: req.body.mileage,
         creatorId: req.auth.userId,
-        fuelType: req.body.fuelType,
-        litterPrice: req.body.litterPrice,
-        totalCost: req.body.totalCost,
-        litter: req.body.litter,
+        value: req.body.value,
+        reason: req.body.reason,
     });
 
-    refuel.save().then(
+    earning.save().then(
         () => {
             res.status(201).json({
-                message: 'Refuel saved successfully!',
-                refuel: refuel
+                message: 'Earning saved successfully!',
+                earning: earning
             });
         }
     ).catch(
@@ -32,11 +26,11 @@ exports.create = (req, res, next) => {
 };
 
 exports.getSingle = (req, res, next) => {
-    Refuel.findOne({
+    Earning.findOne({
         _id: req.body.id
     }).then(
-        (refuel) => {
-            res.status(200).json(refuel);
+        (cost) => {
+            res.status(200).json(cost);
         }
     ).catch(
         (error) => {
@@ -48,9 +42,9 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    Refuel.find().then(
-        (refuels) => {
-            res.status(200).json(refuels);
+    Earning.find().then(
+        (earning) => {
+            res.status(200).json(earning);
         }
     ).catch(
         (error) => {
@@ -62,20 +56,18 @@ exports.getAll = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    const refuel = new Refuel({
+    const earning = new Earning({
         _id: req.body.id,
         date: req.body.date,
         mileage: req.body.mileage,
         creatorId: req.auth.userId,
-        fuelType: req.body.fuelType,
-        litterPrice: req.body.litterPrice,
-        totalCost: req.body.totalCost,
-        litter: req.body.litter,
+        value: req.body.value,
+        reason: req.body.reason,
     });
-    Refuel.updateOne({ _id: req.body.id }, refuel).then(
+    Earning.updateOne({ _id: req.body.id }, earning).then(
         () => {
             res.status(201).json({
-                message: 'Refuel updated successfully!'
+                message: 'Cost updated successfully!'
             });
         }
     ).catch(
@@ -89,10 +81,10 @@ exports.update = (req, res, next) => {
 
 
 exports.delete = (req, res, next) => {
-    Refuel.deleteOne({ _id: req.body.id }).then(
+    Earning.deleteOne({ _id: req.body.id }).then(
         (result) => {
             res.status(200).json({
-                message: "Refuel deleted : " + result.deletedCount
+                message: "Earning deleted : " + result.deletedCount
             });
         }
     ).catch(

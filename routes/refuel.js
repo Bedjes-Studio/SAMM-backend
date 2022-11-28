@@ -4,10 +4,10 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const refuelCtrl = require('../controllers/refuel');
 
-router.get('/test', refuelCtrl.test);
 router.post('/create', auth, refuelCtrl.create);
-// router.update('/read', refuelCtrl.signup);
-// router.update('/update', refuelCtrl.signup);
-router.delete('/delete', refuelCtrl.delete);
+router.post('/getSingle', auth, refuelCtrl.getSingle);
+router.get('/getAll', auth, refuelCtrl.getAll);
+router.put('/update', auth, refuelCtrl.update);
+router.delete('/delete', auth, refuelCtrl.delete);
 
 module.exports = router;

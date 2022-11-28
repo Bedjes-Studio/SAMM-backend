@@ -1,25 +1,20 @@
-const Refuel = require('../models/refuel');
-
-exports.test = (req, res, next) => {
-    res.status(200).json({ "Test": "Ok" });
-};
+const Cost = require('../models/cost');
 
 exports.create = (req, res, next) => {
-    const refuel = new Refuel({
+    const cost = new Cost({
         date: Date.now(),
         mileage: req.body.mileage,
         creatorId: req.auth.userId,
-        fuelType: req.body.fuelType,
-        litterPrice: req.body.litterPrice,
-        totalCost: req.body.totalCost,
-        litter: req.body.litter,
+        value: req.body.value,
+        reason: req.body.reason,
+        paymentMethod: req.body.paymentMethod
     });
 
-    refuel.save().then(
+    cost.save().then(
         () => {
             res.status(201).json({
-                message: 'Refuel saved successfully!',
-                refuel: refuel
+                message: 'Cost saved successfully!',
+                cost: cost
             });
         }
     ).catch(
@@ -32,11 +27,11 @@ exports.create = (req, res, next) => {
 };
 
 exports.getSingle = (req, res, next) => {
-    Refuel.findOne({
+    Cost.findOne({
         _id: req.body.id
     }).then(
-        (refuel) => {
-            res.status(200).json(refuel);
+        (cost) => {
+            res.status(200).json(cost);
         }
     ).catch(
         (error) => {
@@ -48,9 +43,9 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    Refuel.find().then(
-        (refuels) => {
-            res.status(200).json(refuels);
+    Cost.find().then(
+        (cost) => {
+            res.status(200).json(cost);
         }
     ).catch(
         (error) => {
@@ -62,20 +57,19 @@ exports.getAll = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    const refuel = new Refuel({
+    const cost = new Cost({
         _id: req.body.id,
         date: req.body.date,
         mileage: req.body.mileage,
         creatorId: req.auth.userId,
-        fuelType: req.body.fuelType,
-        litterPrice: req.body.litterPrice,
-        totalCost: req.body.totalCost,
-        litter: req.body.litter,
+        value: req.auth.value,
+        reason: req.auth.reason,
+        paymentMethod: req.auth.paymentMethod
     });
-    Refuel.updateOne({ _id: req.body.id }, refuel).then(
+    Cost.updateOne({ _id: req.body.id }, cost).then(
         () => {
             res.status(201).json({
-                message: 'Refuel updated successfully!'
+                message: 'Cost updated successfully!'
             });
         }
     ).catch(
@@ -89,10 +83,10 @@ exports.update = (req, res, next) => {
 
 
 exports.delete = (req, res, next) => {
-    Refuel.deleteOne({ _id: req.body.id }).then(
+    Cost.deleteOne({ _id: req.body.id }).then(
         (result) => {
             res.status(200).json({
-                message: "Refuel deleted : " + result.deletedCount
+                message: "Cost deleted : " + result.deletedCount
             });
         }
     ).catch(
