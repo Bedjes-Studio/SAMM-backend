@@ -181,14 +181,101 @@
 									}
 								},
 								"url": {
-									"raw": "{{APIUri}}/event/refuel/test",
+									"raw": "{{APIUri}}/event/refuel/create",
 									"host": [
 										"{{APIUri}}"
 									],
 									"path": [
 										"event",
 										"refuel",
-										"test"
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6384bb6e5582b7bc988125ef\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/refuel/getSingle",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"refuel",
+										"getSingle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/refuel/getAll",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"refuel",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": \"6384bb6e5582b7bc988125ef\",\r\n        \"mileage\": 2000,\r\n        \"date\": \"12-05-2000\",\r\n        \"fuelType\": \"sp95\",\r\n        \"litterPrice\": 1.56,\r\n        \"totalCost\":  95.5,\r\n        \"litter\":  70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/refuel/update",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"refuel",
+										"update"
 									]
 								}
 							},
@@ -201,7 +288,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"637e843a7c92417dee752083\"\r\n}",
+									"raw": "{\r\n    \"id\": \"6384b89648a7ced06ca19763\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -209,12 +296,309 @@
 									}
 								},
 								"url": {
-									"raw": "{{APIUri}}/car/delete",
+									"raw": "{{APIUri}}/event/refuel/delete",
 									"host": [
 										"{{APIUri}}"
 									],
 									"path": [
-										"car",
+										"event",
+										"refuel",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cost",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\",\r\n        \"paymentMethod\": \"CB\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/cost/create",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"cost",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6384be808bffb808ebab6125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/cost/getSingle",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"cost",
+										"getSingle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/cost/getAll",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"cost",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": \"6384bb6e5582b7bc988125ef\",\r\n        \"date\": \"12-05-2000\",\r\n        \"mileage\": 2000,\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\",\r\n        \"paymentMethod\": \"CB\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/cost/update",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"cost",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6384be808bffb808ebab6125\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/cost/delete",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"cost",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Earning",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/earning/create",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"earning",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6384c027385937a92b2d108a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/earning/getSingle",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"earning",
+										"getSingle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/earning/getAll",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"earning",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": \"6384c027385937a92b2d108a\",\r\n        \"date\": \"12-05-2000\",\r\n        \"mileage\": 2000,\r\n        \"value\": 2000,\r\n        \"reason\": \"covoit\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/earning/update",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"earning",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6384c027385937a92b2d108a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUri}}/event/earning/delete",
+									"host": [
+										"{{APIUri}}"
+									],
+									"path": [
+										"event",
+										"earning",
 										"delete"
 									]
 								}
