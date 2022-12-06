@@ -21,6 +21,12 @@ mongoose.connect(config.mongodb.host + ":" + config.mongodb.port + "/" + config.
 app.use('/api/user', userRoutes);
 app.use('/api/car', carRoutes);
 app.use('/api/event', eventRoutes);
+app.use('/online', (req, res, next) => {
+    res.status(200).json({
+        message: 'server is online'
+    });
+} );
+
 
 
 
