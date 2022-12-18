@@ -7,8 +7,9 @@ exports.createCar = (req, res, next) => {
         year: req.body.year,
         ownerId: req.auth.userId,
         guestsId: [],
-        specsId: "aaa" // TODO : link to specs Id
+        // specsId: "aaa" // TODO : link to specs Id
     });
+
     car.save().then(
         () => {
             res.status(201).json({
@@ -42,9 +43,9 @@ exports.getSingle = (req, res, next) => {
     );
 }
 
-// TODO : filter to user cars only
 exports.getAll = (req, res, next) => {
-    Car.find().then(
+    console.log(req.auth.userId);
+    Car.find({ownerId: req.auth.userId}).then(
         (cars) => {
             res.status(200).json(cars);
         }
