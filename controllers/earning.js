@@ -5,6 +5,7 @@ exports.create = (req, res, next) => {
         date: Date.now(),
         mileage: req.body.mileage,
         creatorId: req.auth.userId,
+        carId: req.body.carId,
         value: req.body.value,
         reason: req.body.reason,
     });
@@ -61,6 +62,7 @@ exports.update = (req, res, next) => {
         date: req.body.date,
         mileage: req.body.mileage,
         creatorId: req.auth.userId,
+        carId: req.body.carId,
         value: req.body.value,
         reason: req.body.reason,
     });

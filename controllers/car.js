@@ -42,6 +42,7 @@ exports.getSingle = (req, res, next) => {
     );
 }
 
+// TODO : filter to user cars only
 exports.getAll = (req, res, next) => {
     Car.find().then(
         (cars) => {
