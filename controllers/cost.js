@@ -44,7 +44,7 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    Cost.find().then(
+    Cost.find({carId: req.body.carId}).then(
         (cost) => {
             res.status(200).json(cost);
         }

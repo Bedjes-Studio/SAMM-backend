@@ -43,7 +43,7 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    Earning.find().then(
+    Earning.find({carId: req.body.carId}).then(
         (earning) => {
             res.status(200).json(earning);
         }
