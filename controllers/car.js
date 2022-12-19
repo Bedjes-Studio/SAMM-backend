@@ -7,6 +7,12 @@ exports.createCar = (req, res, next) => {
         year: req.body.year,
         ownerId: req.auth.userId,
         guestsId: [],
+        fuelType: req.body.fuelType,
+        fuelCapacity: req.body.fuelCapacity,
+        type: req.body.type,
+        brand: req.body.brand,
+        model: req.body.model,
+        name: req.body.name,
         // specsId: "aaa" // TODO : link to specs Id
     });
 
@@ -44,7 +50,7 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    Car.find({ownerId: req.auth.userId}).then(
+    Car.find({ ownerId: req.auth.userId }).then(
         (cars) => {
             res.status(200).json(cars);
         }
@@ -63,6 +69,12 @@ exports.update = (req, res, next) => {
         date: req.body.date,
         mileage: req.body.mileage,
         year: req.body.year,
+        fuelType: req.body.fuelType,
+        fuelCapacity: req.body.fuelCapacity,
+        type: req.body.type,
+        brand: req.body.brand,
+        model: req.body.model,
+        name: req.body.name,
     });
     Car.updateOne({ _id: req.body.id }, car).then(
         () => {
