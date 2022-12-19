@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"hugo\",\r\n    \"email\": \"totoa@gmail.com\",\r\n    \"password\": \"aaa\"\r\n}",
+							"raw": "{\r\n    \"name\": \"b\",\r\n    \"email\": \"c\",\r\n    \"password\": \"b\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -49,7 +49,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"totoa@gmail.com\",\r\n    \"password\": \"aaa\"\r\n}",
+							"raw": "{\r\n    \"email\": \"c\",\r\n    \"password\": \"b\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -111,7 +111,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"mileage\": 1000,\r\n    \"year\": 3000\r\n}",
+							"raw": "{\r\n    \"mileage\": 1000,\r\n    \"year\": 3000,\r\n    \"fuelType\": \"sp95\",\r\n    \"fuelCapacity\": 35,\r\n    \"type\": \"berline\",\r\n    \"brand\": \"Chrysler\",\r\n    \"model\": \"300c\",\r\n    \"name\": \"Mon char\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -138,7 +138,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"6384c027385937a92b2d108a\"\r\n}",
+							"raw": "{\r\n    \"id\": \"63838a5a5b7571886ebdbfa8\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -195,7 +195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"mileage\": 1000000,\r\n    \"year\": 3000\r\n}",
+							"raw": "{\r\n    \"id\": \"63838a5a5b7571886ebdbfa8\",\r\n    \"mileage\": 1000000,\r\n    \"year\": 3000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -257,7 +257,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"fuelType\": \"sp95\",\r\n        \"litterPrice\": 1.56,\r\n        \"totalCost\":  95.5,\r\n        \"litter\":  50\r\n}",
+									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"carId\" : \"aaa\",\r\n        \"fuelType\": \"sp95\",\r\n        \"litterPrice\": 1.56,\r\n        \"totalCost\":  95.5,\r\n        \"litter\":  50\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -692,6 +692,46 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Online",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{port}}/online",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"online"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Online prod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://34.236.157.55:6422/online",
+					"protocol": "http",
+					"host": [
+						"34",
+						"236",
+						"157",
+						"55"
+					],
+					"port": "6422",
+					"path": [
+						"online"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -699,7 +739,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzdlNzBkZjhmNzI1NDcyZTVmODAyNjUiLCJpYXQiOjE2Njk1NjQ5NzUsImV4cCI6MTY2OTY1MTM3NX0._QNetijIGvC9uj4NKZzQQ1ga4s9e_sJqRSpMsCd96KI",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzlmYTA1Nzc5MWY4ZTEyYTMzN2E0MjYiLCJpYXQiOjE2NzE0MDU2OTIsImV4cCI6MTY3MTQ5MjA5Mn0.ZxK9nRPrUDAp8bgfxeLUaw_STqy4SDZPA3eOu_fo5C8",
 				"type": "string"
 			}
 		]
