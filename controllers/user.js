@@ -3,6 +3,9 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const config = require('../config');
 
+exports.checkToken = (req, res, next) => {
+    res.status(200);
+}
 // TODO : mettre plus que 10 ou random ?
 // TODO : generate sharedID
 exports.signup = (req, res, next) => {
