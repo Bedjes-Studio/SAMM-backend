@@ -4,7 +4,9 @@ const bcrypt = require('bcrypt');
 const config = require('../config');
 
 exports.checkToken = (req, res, next) => {
-    res.status(200);
+    res.status(200).json({
+        message: 'server is online'
+    });
 }
 // TODO : mettre plus que 10 ou random ?
 // TODO : generate sharedID
