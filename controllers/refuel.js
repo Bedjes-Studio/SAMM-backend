@@ -49,7 +49,7 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    Refuel.find().then(
+    Refuel.find({carId: req.body.carId}).then(
         (refuels) => {
             res.status(200).json(refuels);
         }
