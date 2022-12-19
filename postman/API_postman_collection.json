@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"b\",\r\n    \"email\": \"c\",\r\n    \"password\": \"b\"\r\n}",
+							"raw": "{\r\n    \"name\": \"b\",\r\n    \"email\": \"b\",\r\n    \"password\": \"b\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -49,7 +49,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"c\",\r\n    \"password\": \"b\"\r\n}",
+							"raw": "{\r\n    \"email\": \"b\",\r\n    \"password\": \"b\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -308,15 +308,12 @@
 						},
 						{
 							"name": "Read all",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\r\n    \"carId\": \"aaa\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -405,7 +402,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\",\r\n        \"paymentMethod\": \"CB\"\r\n}",
+									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"carId\" : \"aaaa\",\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\",\r\n        \"paymentMethod\": \"CB\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -456,15 +453,12 @@
 						},
 						{
 							"name": "Read all",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\r\n    \"carId\": \"aaa\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -553,7 +547,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\"\r\n}",
+									"raw": "{\r\n        \"mileage\": 2000,\r\n        \"carId\": \"aaa\",\r\n        \"value\": 2000,\r\n        \"reason\": \"parking\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -604,15 +598,12 @@
 						},
 						{
 							"name": "Read all",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\r\n    \"carId\": \"aaa\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
