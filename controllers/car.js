@@ -44,7 +44,6 @@ exports.getSingle = (req, res, next) => {
 }
 
 exports.getAll = (req, res, next) => {
-    console.log(req.auth.userId);
     Car.find({ownerId: req.auth.userId}).then(
         (cars) => {
             res.status(200).json(cars);
