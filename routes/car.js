@@ -8,7 +8,7 @@ router.post('/create', auth, carCtrl.createCar);
 router.post('/getSingle', auth, carCtrl.getSingle);
 router.get('/getAll', auth, carCtrl.getAll);
 router.put('/update', auth, carCtrl.update);
-router.delete('/delete', auth, carCtrl.deleteCar);
+router.post('/delete', auth, carCtrl.deleteCar);
 
 
 

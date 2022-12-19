@@ -8,6 +8,6 @@ router.post('/create', auth, refuelCtrl.create);
 router.post('/getSingle', auth, refuelCtrl.getSingle);
 router.post('/getAll', auth, refuelCtrl.getAll);
 router.put('/update', auth, refuelCtrl.update);
-router.delete('/delete', auth, refuelCtrl.delete);
+router.post('/delete', auth, refuelCtrl.delete);
 
 module.exports = router;
